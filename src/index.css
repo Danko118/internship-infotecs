@@ -1,7 +1,6 @@
 /* Основные настройки страницы */
 * {
   margin: 0;
-  height: 0;
   box-sizing: border-box;
 }
 
@@ -13,10 +12,11 @@ body {
   width: auto;
   overflow-x: hidden;
   height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--main);
 }
 
 ul,
@@ -29,7 +29,6 @@ menu {
 }
 
 a {
-  display: block;
   color: inherit;
   text-decoration: none;
   background-color: transparent;
@@ -96,4 +95,13 @@ img {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Определяю переменные для цвета, которые потом можно менять */
+:root {
+  --main: #F5F5F5;
+  --second: #FFF;
+  --contrast: #1C1C1C;
+  --accent: #4296d3;
+  --grey: #f6f6f6;
 }

@@ -1,0 +1,36 @@
+header {
+    width: 100%;
+    height: 60px;
+    
+    background: var(--accent);
+    color: var(--second);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: auto;
+    height: auto;
+
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    & svg {
+        width: 25px;
+        height: 25px;
+
+        color: var(--second);
+    }
+
+    & span {
+        width: auto;
+        height: auto;
+    }
+}

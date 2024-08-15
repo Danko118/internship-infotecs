@@ -1,0 +1,28 @@
+.item {
+
+    cursor: pointer;
+
+    transition: 0.1s all ease-out;
+
+    & :first-child {
+        border-left: none !important;
+    }
+
+    & td {
+        width: auto;
+        transition: 0.1s all ease-out;
+        padding: 10px;
+
+        border-left: 1px solid #707070;
+    }
+}
+
+.item:hover {
+    background: var(--accent) !important;
+    color: var(--second);
+
+    & td {
+        padding: 15px 10px;
+        border-left: 1px solid #fff;
+    }
+}
