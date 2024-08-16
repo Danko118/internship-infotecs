@@ -74,6 +74,33 @@
     box-shadow: 0 0 10px rgba($color: #000000, $alpha: .1);
 }
 
+.options {
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+}
+
+.switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    & svg {
+        color: var(--main);
+        width: 30px;
+        height: 30px;
+        transition: .4s;
+    }
+    & .active {
+        color: var(--accent);
+    }
+}
+
 .resizer {
     position: absolute;
     top: 0;

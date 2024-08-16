@@ -4,12 +4,16 @@ import Style from './dropdown.module.scss'
 function UiDropdown({
     options,
     onChange,
-    value
+    value,
+    isNumber
     
     }) {
 
   const handleOptionChange = (event) => {
-    onChange(Number(event.target.value));
+    if (isNumber) 
+        onChange(Number(event.target.value));
+    else 
+        onChange(event.target.value);
   };
 
   return (

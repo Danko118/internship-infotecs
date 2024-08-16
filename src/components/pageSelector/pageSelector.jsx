@@ -5,26 +5,27 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
 
 const UiPageSelector = ({
-    pageOptions,
-    page,
-    setPage
+    options,
+    value,
+    onChange
 }) => {
     return (
         <div className={Style.pageSelector}>
             <button 
-                onClick={() => setPage(page - 1)}
-                disabled={page === 1}
+                onClick={() => onChange(value - 1)}
+                disabled={value === 1}
             >
                 <FaArrowLeft />
             </button>
             <UiDropdown 
-                options={pageOptions}
-                value={page}
-                onChange={setPage}
+                options={options}
+                value={value}
+                onChange={onChange}
+                isNumber={true}
             />
             <button 
-                onClick={() => setPage(page + 1)}
-                disabled={page === pageOptions[pageOptions.length - 1]}
+                onClick={() => onChange(value + 1)}
+                disabled={value === options[options.length - 1]}
             >
                 <FaArrowRight />
             </button>

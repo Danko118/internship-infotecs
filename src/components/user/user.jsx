@@ -12,10 +12,10 @@ const UiUser = ({
     return (
         <tr className={Style.item}>
             <td>{name}</td>
-            <td>{age }</td>
-            <td>{gender }</td>
-            <td>{phone }</td>
-            <td>{address}</td>
+            <td>{age}</td>
+            <td>{gender}</td>
+            <td>{phone}</td>
+            <td><address>{address}</address></td>
         </tr>
     );
 };
