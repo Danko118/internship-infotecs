@@ -6,3 +6,10 @@
     
     justify-self: end;
 }
+
+@media screen and (max-width: 920px) {
+    .limits {
+        justify-self: center;
+        order: -1;
+    }
+}

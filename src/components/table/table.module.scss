@@ -1,113 +1,44 @@
-.table {
+table {
     width: 100%;
     max-width: 1200px;
-    min-height: calc(100vh - 80px);
-
-    display: flex;
-    justify-content: baseline;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
-
-    margin: 0 auto;
-    padding: 30px 0;
-
-    text-align: left;
-
-    & table {
-        width: 100%;
-        max-width: 1200px;
-        height: auto;
-
-        overflow: hidden;
-
-        padding: 15px;
-
-        display: table;
-        table-layout: auto;
-
-        border-collapse: collapse;
-        border-spacing: 0px;
-
-        transition: 0.1s all ease-out;
-        
-        border-radius: 15px;
-        box-shadow: 0 0 10px rgba($color: #000000, $alpha: .1);
-
-        background: var(--second);
-
-        text-align: center;
-        & :first-child {
-            border-left: none !important;
-        }
-        & tr:nth-child(2n) {
-            background: var(--grey);
-        }
-        & tr:not(:last-child) {
-            border-bottom: 1px solid #707070;
-        }
-        & th {
-            position: relative;
-            min-width: 50px;
-            width: auto;
-            padding: 20px;
-
-            border-left: 1px solid #707070;
-            border-bottom: 2px solid #707070;
-        }
-    }
-}
-
-.title {
-    width: 100%;
     height: auto;
+
+    overflow: hidden;
+
+    padding: 15px;
+
+    display: table;
+    table-layout: auto;
+
+    border-collapse: collapse;
+    border-spacing: 0px;
+
+    transition: 0.1s all ease-out;
     
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: .1);
 
     background: var(--second);
 
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba($color: #000000, $alpha: .1);
-    & h1 {
-        cursor: pointer;
+    text-align: center;
+    & :first-child {
+        border-left: none !important;
     }
-}
-
-.options {
-    width: 100%;
-    height: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px; 
-}
-
-.switch {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    & svg {
-        color: var(--main);
-        width: 30px;
-        height: 30px;
-        transition: .4s;
+    & tr:nth-child(2n) {
+        background: var(--grey);
     }
-    & .active {
-        color: var(--accent);
+    & tr:not(:last-child) {
+        border-bottom: 1px solid #707070;
     }
-}
+    & th {
+        position: relative;
+        min-width: 50px;
+        width: auto;
+        padding: 20px;
 
-.filters {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+        border-left: 1px solid #707070;
+        border-bottom: 2px solid #707070;
+    }
 }
 
 .resizer {
@@ -118,71 +49,10 @@
     left: auto;
     width: 16px;    
     cursor: col-resize;       
-  }
-
-.loading {
-    width: 100%;
-
-    font-size: 32px;
-    font-weight: 600;
-
-    padding: 60px 0;
-
-    display: inline-block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
 }
 
-.loadIcon {
-    width: 40px;
-    height: 40px;
-
-    & svg {
-        width: 100%;
-        height: 100%;
-        -webkit-animation: rotating 2s linear infinite;
-        -moz-animation: rotating 2s linear infinite;
-        -ms-animation: rotating 2s linear infinite;
-        -o-animation: rotating 2s linear infinite;
-        animation: rotating 2s linear infinite;
+@media screen and (max-width: 920px) {
+    table {
+        display: none;
     }
 }
-
-@media screen and (max-width: 1200px) {
-    .table {
-        text-align: center;
-    }
-}
-
-// Анимация вращения
-@-webkit-keyframes rotating /* Safari and Chrome */ {
-    from {
-      -webkit-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    to {
-      -webkit-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes rotating {
-    from {
-      -ms-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    to {
-      -ms-transform: rotate(360deg);
-      -moz-transform: rotate(360deg);
-      -webkit-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-

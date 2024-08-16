@@ -1,0 +1,16 @@
+.table {
+    width: 100%;
+    height: auto;
+
+    display: none;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    gap: 25px;
+}
+
+@media screen and (max-width: 920px) {
+    .table {
+        display: flex;
+    }
+}

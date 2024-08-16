@@ -1,10 +1,10 @@
-import UiTable from "./components/table/table";
+import MainComponent from "./components/MainComponent/MainComponent";
 import UiFooter from "./components/footer/footer";
 
 function App() {
   return (
-    <div className="App">
-      <UiTable />
+    <div>
+      <MainComponent />
       <UiFooter />
     </div>
   );
