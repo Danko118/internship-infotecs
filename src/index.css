@@ -74,16 +74,6 @@ img {
   display: block;
 }
 
-/* Класс для создания не выделяемых надписей */
-.noselect {
-  -webkit-touch-callout: none; 
-    -webkit-user-select: none; 
-     -khtml-user-select: none; 
-       -moz-user-select: none; 
-        -ms-user-select: none; 
-            user-select: none; 
-}
-
 /* Удаляем все анимации и переходы для людей, 
       которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {

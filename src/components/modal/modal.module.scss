@@ -38,7 +38,9 @@
 
 .image {
     width: 120px;
+    min-width: 120px;
     height: 120px;
+    min-height: 120px;
 
     border: 2px solid var(--accent);
     border-radius: 50%;

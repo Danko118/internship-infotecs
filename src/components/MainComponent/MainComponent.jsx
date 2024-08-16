@@ -24,7 +24,6 @@ const MainComponent = () => {
     const [query,setQuery] = useState("")
     const [sort,setSort] = useState(false)
     const [loaded,setLoaded] = useState(false)
-    const [error,setError] = useState(false)
 
     let SortOptions = {
         "Никак" : "",
