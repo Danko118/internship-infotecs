@@ -72,6 +72,9 @@
 
     border-radius: 15px;
     box-shadow: 0 0 10px rgba($color: #000000, $alpha: .1);
+    & h1 {
+        cursor: pointer;
+    }
 }
 
 .options {
@@ -99,6 +102,12 @@
     & .active {
         color: var(--accent);
     }
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .resizer {

@@ -5,14 +5,18 @@ import UiUser from '../user/user';
 import UiPageSelector from '../pageSelector/pageSelector';
 import UiUserLimit from '../userLimit/userLimit';
 import UiFilter from '../filter/filter';
+import UiSort from '../sort/sort';
 import UiSwitch from '../switch/switch';
 import { FaCircleNotch } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
+import { IoIosFunnel } from "react-icons/io";
 
 const UiTable = () => {
     const [data,setData] = useState()
     const [page,setPage] = useState(1)
-    const [key,setKey] = useState("firstName")
+    const [filterKey,setFilterKey] = useState("firstName")
+    const [sortKey,setSortKey] = useState("firstName")
+    const [orderKey,setOrderKey] = useState("")
     const [pageOptions,setPages] = useState([])
     const [limit,setLimit] = useState(30)
     const [filter,setFilter] = useState(false)
@@ -21,19 +25,52 @@ const UiTable = () => {
     const [loaded,setLoaded] = useState(false)
     const [error,setError] = useState(false)
 
+    let SortOptions = {
+        "Никак" : "",
+        "По возрастанию" : "asc",
+        "По убыванию" : "desc"
+    }
+
+    //функция очистки данных
+    function clearData() {
+        setPage(1)
+        setQuery("")
+        setFilter(false)
+        setFilterKey("")
+        setSortKey("")
+        setOrderKey("")
+    }
+
     // Запрос на API
     useEffect(() => {
         setData();
-        if (filter && query !== "" && key !== "")
-            FetchFilterData(setData,limit,page,key,query)
-        else
-            FetchData(setData,limit, page); 
-    }, [limit,page,query,filter])
+            FetchData(
+                setData,
+                limit, 
+                page, 
+                (filterKey !== "")? filterKey : null, 
+                (query !== "")? query : null, 
+                (sortKey !== "")? sortKey : null, 
+                (orderKey !== "")? orderKey : null
+            ); 
+    }, [limit,page, query,filter,filterKey, sort,sortKey,orderKey])
 
     // Обнуление таблицы, если была произведена смена лимита
     useEffect(() => {
         setPage(1)
     }, [limit])
+
+    // Если фильтр был выключен, то следует очистить нужные данные
+    useEffect(() => {
+        setQuery("")
+        setFilterKey("")
+    }, [filter])
+
+    // Если сортировка была выключена, то следует очистить нужные данные
+    useEffect(() => {
+        setSortKey("")
+        setOrderKey("")
+    }, [sort])
 
     // Расчет кол-ва страниц
     useEffect(() => {
@@ -44,20 +81,38 @@ const UiTable = () => {
     return (
         <div className={Style.table}>
             <div className={Style.title}>
-                <h1>Поиск пользователей</h1>
-                <div className={Style.switch}>
-                    <IoSearchOutline className={(filter)? Style.active : ""}/>
-                    <UiSwitch 
-                        checked={filter}
-                        setChecked={setFilter}
-                    />
+                <h1 onClick={() => clearData()}>Поиск пользователей</h1>
+                <div className={Style.filters}>
+                    <div className={Style.switch}>
+                        <IoSearchOutline className={(filter)? Style.active : ""}/>
+                        <UiSwitch 
+                            checked={filter}
+                            setChecked={setFilter}
+                        />
+                    </div>
+                    <div className={Style.switch}>
+                        <IoIosFunnel className={(sort)? Style.active : ""}/>
+                        <UiSwitch 
+                            checked={sort}
+                            setChecked={setSort}
+                        />
+                    </div>
                 </div>
             </div>
             {(filter)? 
                 <UiFilter
-                    setKey={setKey}
+                    setKey={setFilterKey}
                     setQuery={setQuery}
                     query={query}
+                />
+                :
+                <></>
+            }
+            {(sort)? 
+                <UiSort
+                    setSort={setSortKey}
+                    sortOptions={SortOptions}
+                    setSortValue={setOrderKey}
                 />
                 :
                 <></>

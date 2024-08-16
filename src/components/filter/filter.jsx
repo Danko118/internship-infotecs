@@ -1,5 +1,6 @@
 import React from 'react';
 import Style from './filter.module.scss'
+import alias from './alias';
 import UiInput from '../input/input';
 import UiUserSearch from '../userSearch/userSearch';
 
@@ -11,7 +12,9 @@ const UiFilter = ({
     return (
         <div className={Style.filter}>
             <UiUserSearch 
+                alias={alias}
                 onChange={setKey}
+                placeholder={"Поиск по "}
             />
             <UiInput 
                 placeholder={"Введите запрос"}
