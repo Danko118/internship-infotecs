@@ -24,7 +24,10 @@ const UiMobileUser = ({
                     <li>Номер телефона: {phone}</li>
                     <li>Адрес: <address>{address}</address></li>
                 </ul>
-                <button className={Style.more}><IoSearch/></button>
+                <button 
+                    className={Style.more}
+                    onClick={() => dispatchEvent(new CustomEvent("openModal",{detail:id}))}
+                ><IoSearch/></button>
             </div>
         </div>
     );

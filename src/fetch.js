@@ -29,3 +29,19 @@ export function FetchData(setData, limit, page, key = null, value = null, sortBy
       window.dispatchEvent(new Event("fetch failed"));
     });
 }
+
+export function FetchUser(setData, id) {
+  
+  let url = `https://dummyjson.com/users/${id}` 
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      window.dispatchEvent(new Event("user fetched"));
+      setData(data);
+    })
+    .catch(error => {
+      console.error('Ошибка при получении данных:', error);
+      window.dispatchEvent(new Event("user fetch failed"));
+    });
+}
+

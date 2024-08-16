@@ -7,8 +7,8 @@ import UiFilter from '../filter/filter';
 import UiSort from '../sort/sort';
 import UiSwitch from '../switch/switch';
 import UiTable from '../table/table';
+import UiLoading from '../loading/loading';
 import UiMobileTable from '../mobileTable/mobileTable';
-import { FaCircleNotch } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoIosFunnel } from "react-icons/io";
 
@@ -147,11 +147,7 @@ const MainComponent = () => {
                         data={data.users}
                     />
                 </>
-                :
-                <div className={Style.loading}>
-                    Загрузка <div className={Style.loadIcon}><FaCircleNotch />
-                    </div>
-                </div>
+                : <UiLoading />
             }
             <UiPageSelector
                 options={pageOptions}

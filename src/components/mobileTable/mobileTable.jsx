@@ -7,7 +7,7 @@ const UiMobileTable = ({ data }) => {
         <div className={Style.table}>
             {data.map((user) => (
                 <UiMobileUser
-                    key={user.id}
+                    key={user.id + "2"}
                     id={user.id}
                     name={[user.firstName,user.maidenName,user.lastName].join(" ")}
                     age={user.age}

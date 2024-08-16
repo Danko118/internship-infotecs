@@ -31,7 +31,7 @@ const UiTable = ({ data }) => {
                 <tbody>
                     {data.map((user) => (
                         <UiUser 
-                            key={user.id}
+                            key={user.id + "1"}
                             id={user.id}
                             name={[user.firstName,user.maidenName,user.lastName].join(" ")}
                             age={user.age}

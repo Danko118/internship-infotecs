@@ -10,8 +10,6 @@ html {
 
 body {
   width: auto;
-  overflow-x: hidden;
-  height: 100vh;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;

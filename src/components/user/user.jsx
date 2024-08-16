@@ -10,7 +10,10 @@ const UiUser = ({
     address
 }) => {
     return (
-        <tr className={Style.item}>
+        <tr 
+            className={Style.item}
+            onClick={() => dispatchEvent(new CustomEvent("openModal",{detail:id}))}
+        >
             <td>{name}</td>
             <td>{age}</td>
             <td>{gender}</td>
